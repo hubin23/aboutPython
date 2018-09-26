@@ -1,0 +1,18 @@
+@import "reset.css";
+html,body{font-size: 10px;height: 100%; min-width: 320px;background: #eff8f0;font-family: "微软雅黑"}
+img{width: 100%;display: block;}
+.banner{position: relative;}
+.banner .banner_tt{position: absolute;width: 100%;top: 50%;text-align: center;color: #fff3cc;font-size: 13px;transform: translateY(-50%);-webkit-transform: translateY(-50%);}
+.banner .banner_tt h2{font-size: 18px;margin-bottom: 8px}
+.banner .banner_tt p i{width: 12px;height: 12px;display: inline-block;background: url(../img/icon.png) no-repeat center center;background-size: contain;margin-right: 5px;vertical-align: bottom;position: relative;bottom: 1px;}
+.content {padding-bottom: 90px;}
+.content .list{background: #fff;padding:15px 15px 16px 15px;border-bottom: 1px solid #dcdedf;margin-bottom: 6px;}
+.content .list h3{padding-bottom: 10px;font-size: 16px;color:#737373}
+.content .list h3 i{width: 2px;height: 11px;display: inline-block;background: #08b233;margin-right: 12px;vertical-align: baseline;}
+.content .list p{font-size: 13px;color: #919191;line-height: 22px; margin-left: 14px;}
+.content .list p span{color: #303030;font-size: 14px;font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;}
+.content .btn{padding:0 5%;}
+.content .btn div{margin-top: 16px;background: #28bc4e;padding:8px;font-size: 14px;color: #fff;text-align: center;box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.4);}
+.content .btn div.year_btn{}
+.content .btn div.active{background: #30a24d;box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;}
+

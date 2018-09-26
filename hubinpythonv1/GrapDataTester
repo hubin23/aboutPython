@@ -1,0 +1,19 @@
+import requests
+from bs4 import BeautifulSoup
+
+headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                         'Chrome/61.0.3163.91 Safari/537.36'}
+url = "http://www.manhuatai.com/douluodalu/"
+response = requests.request('get', headers=headers, url=url)
+
+soup = BeautifulSoup(response.content)
+
+for k in soup.find_all('ul')[11].find_all('a'):
+    href = k['href']
+    url2 = url+href
+    response2 = requests.request('get', headers=headers, url=url2)
+    print(response2.text)
+    # soup2 = BeautifulSoup(response2.text)
+    # print(soup2.text)
+
+

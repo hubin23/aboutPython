@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+	<title>平台数据</title>
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+	<link rel="stylesheet" type="text/css" href="css/style.css?1.0.0.1">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<div class="banner">
+	<img src="img/banner.jpg">
+	<div class="banner_tt">
+		<h2>点点搜财平台数据</h2>
+		<p><i></i>截止2018-02-04</p>
+	</div>
+</div>
+<div class="content">
+	<div class="list">
+		<h3><i></i>平台综合数据</h3>
+		<p>累计交易金额：<span>56.53亿</span></p>
+		<p>累计交易笔数：<span>96.31万</span></p>
+		<p>累计用户数：<span>104.87万</span></p>
+		<p>累计投资人赚取收益：<span>10364.56万</span></p>
+		<p>兑付率：<span>100%</span></p>
+	</div>
+	<div class="list">
+		<h3><i></i>本周兑付情况</h3>
+		<p>兑付项目数：<span>85（2018.01.29-2018.02.04）</span></p>
+		<p>回款金额：<span>14,230,089.74（2018.01.29-2018.02.04）</span></p>
+	</div>
+	<div class="list">
+		<h3><i></i>投资用户年龄占比分布</h3>
+		<div id="chartContainer1" style="height:200px;width:100%"></div>
+	</div>
+	<div class="list">
+		<h3><i></i>产品期限占比分布</h3>
+		<div id="chartContainer2" style="height:200px;width:100%"></div>
+	</div>
+	<div class="list">
+		<h3><i></i>产品利率占比分布</h3>
+		<div id="chartContainer3" style="height:200px;width:100%"></div>
+	</div>
+
+	<div class="btn clearfix">
+		<div class="year_btn">2017年度运营报告</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/canvasjs.min.js"></script>
+<script type="text/javascript">
+document.body.style.webkitUserSelect='none'; 
+$(function(){
+	var flag1 = 0;
+	var flag2 = 0;
+	var flag3 = 0;
+	
+	var chart1 = new CanvasJS.Chart("chartContainer1",{
+		animationEnabled: true,
+		legend:{
+			verticalAlign: 'center',
+			horizontalAlign: 'right',
+			fontSize:12,
+			fontFamily: "Helvetica Neue"
+		},
+		data: [{
+			type: "doughnut",
+			startAngle: 270,
+			indexLabelFontSize: 12,
+			indexLabelFontFamily: "Garamond",
+			indexLabelPlacement: "outside",
+			indexLabel: "{label}",
+			showInLegend: true,
+			dataPoints: [
+				{  y: 23729, label: "60前", color:"#b299e2", indexLabelFontColor:"#b299e2", legendText:"{label} #percent%"},
+				{  y: 31759, label: "60后", color:"#7fcbef", indexLabelFontColor:"#7fcbef", legendText:"{label} #percent%"},
+				{  y: 39825, label: "70后", color:"#75cf49", indexLabelFontColor:"#75cf49", legendText:"{label} #percent%"},
+				{  y: 93646, label: "80后", color:"#fd6c33", indexLabelFontColor:"#fd6c33", legendText:"{label} #percent%"},
+				{  y: 78985, label: "90后", color:"#fdbc2a", indexLabelFontColor:"#fdbc2a", legendText:"{label} #percent%"},
+			]
+		}]
+	});
+
+
+	var chart2 = new CanvasJS.Chart("chartContainer2",{
+		animationEnabled: true,
+		legend:{
+			verticalAlign: 'center',
+			horizontalAlign: 'right',
+			fontSize:12,
+			fontFamily: "Helvetica Neue"	
+		},
+		data: [{
+			type: "doughnut",
+			startAngle: 270,
+			indexLabelFontSize: 12,
+			indexLabelFontFamily: "Garamond",
+			indexLabelPlacement: "outside",
+			indexLabel: "{label}",
+			showInLegend: true,
+			dataPoints: [
+				{  y: 4171, label: "15天", color:"#7fcbef", indexLabelFontColor:"#7fcbef", legendText:"{label} #percent%"},
+				{  y: 7951, label: "30天", color:"#75cf49", indexLabelFontColor:"#75cf49", legendText:"{label} #percent%"},
+				{  y: 879, label: "60天", color:"#b299e2", indexLabelFontColor:"#b299e2", legendText:"{label} #percent%"},
+				{  y: 3532, label: "90天", color:"#fd6c33", indexLabelFontColor:"#fd6c33", legendText:"{label} #percent%"},
+				{  y: 2662, label: "180天", color:"#e365ac", indexLabelFontColor:"#e365ac", legendText:"{label} #percent%"},
+				{  y: 1561, label: "360天", color:"#fdbc2a", indexLabelFontColor:"#fdbc2a", legendText:"{label} #percent%"},
+			]
+		}]
+	});
+
+	var chart3 = new CanvasJS.Chart("chartContainer3",{
+		animationEnabled: true,
+		legend:{
+			verticalAlign: 'center',
+			horizontalAlign: 'right',
+			fontSize:12,
+			fontFamily: "Helvetica Neue"
+		},
+		data: [{
+			type: "doughnut",
+			startAngle: 270,
+			indexLabelFontSize: 12,
+			indexLabelFontFamily: "Garamond",
+			indexLabelPlacement: "outside",
+			indexLabel: "{label}",
+			showInLegend: true,
+			dataPoints: [
+				{  y: 9632, label: "≤7.5%", color:"#7fcbef", indexLabelFontColor:"#7fcbef", legendText:"{label} #percent%"},
+				{  y: 5300, label: "7.5%-8.5%", color:"#75cf49", indexLabelFontColor:"#75cf49", legendText:"{label} #percent%"},
+				{  y: 4720, label: "8.5%-10%", color:"#fd6c33", indexLabelFontColor:"#fd6c33", legendText:"{label} #percent%"},
+				{  y: 1099, label: ">10%", color:"#fdbc2a", indexLabelFontColor:"#fdbc2a", legendText:"{label} #percent%"},
+
+			]
+		}]
+	});
+	
+	DoughnutLoad();
+	$(window).scroll(function () {
+		DoughnutLoad();
+	});
+
+	function DoughnutLoad(){
+		if($(window).scrollTop()+$(window).height() >= ($("#chartContainer1").offset().top+20)){
+			if(flag1 == 0){
+				chart1.render();
+				flag1 = 1;
+			}
+		}
+		if($(window).scrollTop()+$(window).height()>=($("#chartContainer2").offset().top+20)){
+			if(flag2 == 0){
+				chart2.render();		
+				flag2 = 1;
+			}
+		}
+		if($(window).scrollTop()+$(window).height()>=($("#chartContainer3").offset().top+20)){
+			if(flag3 == 0){
+				chart3.render();	
+				flag3 = 1;	
+			}
+		}
+	}
+
+	//半年运营报告
+	$(".half_btn").click(function(){
+		window.location.href="http://ddsc2.ddsoucai.com/h5/items/oprationReport/index.html";
+	});
+	//2015年运营报告
+	$(".year_btn").click(function(){
+		window.location.href="http://ddsc2.ddsoucai.com/h5/items/oprationReport/index.html";
+	});
+
+});
+</script>
+</body>
+</html>
